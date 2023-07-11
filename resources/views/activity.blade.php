@@ -7,6 +7,7 @@
     <title>To Do List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css
     ">
+
 </head>
 <body>
     <style>
@@ -72,7 +73,7 @@
                                                 @csrf
                                                 @method('PUT')
                                                 <label for="" class="form-label">Activity</label>
-                                                <input type="text" name="activity" class="form-control">
+                                                <input type="text" name="activity" class="form-control" value="{{ old($item->activity) }}">
                                             </div>
                                             <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -122,5 +123,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
     "></script>
 </body>
+@include('sweetalert::alert')
+
 
 </html>

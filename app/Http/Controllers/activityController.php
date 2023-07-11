@@ -31,7 +31,7 @@ class activityController extends Controller
         Activity::create([
             'activity' => $request->activity
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success','Data berhasil disimpan..!');
     }
 
     /**
@@ -59,7 +59,7 @@ class activityController extends Controller
         $activity->update([
             'activity' => $request->activity
         ]);
-        return redirect()->back();
+        return redirect()->back()->with('success','Data berhasil diedit...!');
     }
 
     /**
@@ -72,6 +72,6 @@ class activityController extends Controller
     public function delete($id){
         $activity = Activity::findOrFail($id);
         $activity->delete();
-        return redirect()->back();
+        return redirect()->back()->with('success','Data berhasil di delete...!');
     }
 }
